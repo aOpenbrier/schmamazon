@@ -1,0 +1,26 @@
+{
+  "name": "schmamazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aOpenbrier/schmamazon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aOpenbrier/schmamazon/issues"
+  },
+  "homepage": "https://github.com/aOpenbrier/schmamazon#readme",
+  "dependencies": {
+    "inquirer": "^6.2.0",
+    "mysql2": "^1.6.3",
+    "sequelize": "^4.41.0"
+  }
+}
