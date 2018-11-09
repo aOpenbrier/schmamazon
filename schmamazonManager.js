@@ -9,7 +9,7 @@ dbsync.then(() => {
                 type: 'list',
                 name: 'selection',
                 message: 'Select a function',
-                choices: ["View Products For Sale", "View Low Inventory", "Add To Inventory", "Add New Product"]
+                choices: ["View Products For Sale", "View Low Inventory", "Add To Inventory", "Add New Product", "Exit"]
             })
                 .then(answers => {
                     switch (answers.selection) {
@@ -63,8 +63,11 @@ ${product.dataValues.stock_quantity}`)
                                 })
                             break
                         case "Add New Product":
-
+                        
                             break
+                        default:
+                            process.exit()
+                        break
                     }
                 })
         })

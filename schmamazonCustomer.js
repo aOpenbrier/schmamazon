@@ -21,17 +21,23 @@ function itemSelection() {
         db.products.findAll({
             attributes: ['product_name']
         })
-            .then(r => {
+            .then(productArr => {
                 inq.prompt({
                     type: 'list',
                     name: 'selection',
-                    choices: r.map(each => each.dataValues.product_name)
+                    choices: function (){
+                        const choiceArr = productArr.map(each => each.dataValues.product_name)
+                        choiceArr.push('-CANCEL ORDER-')
+                        return choiceArr
+                    }
                 })
                     .then(answers => {
-                        qtySelection(answers.selection)
+                        if (answers.selection === '-CANCEL ORDER-'){
+                            process.exit()
+                        } else {
+                            qtySelection(answers.selection)
+                        }
                     })
-                // console.log(r[0].dataValues.product_name)
-                // console.log(r.map(each => each.dataValues.product_name))
             })
     })
 }
