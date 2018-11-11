@@ -63,6 +63,32 @@ ${product.dataValues.stock_quantity}`)
                                 })
                             break
                         case "Add New Product":
+                                inq.prompt([
+                                    {
+                                        name: 'product_name',
+                                        message: 'Enter Item Name'
+                                    },
+                                    {
+                                        name: 'department_name',
+                                        message: "Enter department"
+                                    },
+                                    {
+                                        name: 'price',
+                                        message: "Enter price"
+                                    },
+                                    {
+                                        name: 'stock_quantity',
+                                        message: "Enter current stock quantity"
+                                    }
+                            ])
+                            .then(answers => {
+                                    db.products.create({
+                                        product_name: answers.product_name,
+                                        department_name: answers.department_name,
+                                        price: answers.price,
+                                        stock_quantity: answers.stock_quantity
+                                    })
+                            })
                         
                             break
                         default:
