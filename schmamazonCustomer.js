@@ -25,6 +25,7 @@ function itemSelection() {
                 inq.prompt({
                     type: 'list',
                     name: 'selection',
+                    message: 'Item to purchase'
                     choices: function (){
                         const choiceArr = productArr.map(each => each.dataValues.product_name)
                         choiceArr.push('-CANCEL ORDER-')
@@ -45,7 +46,7 @@ function itemSelection() {
 function qtySelection(selection) {
     inq.prompt({
         name: 'quantity',
-        message: `Enter quantity for ${selection}`
+        message: `Enter quantity for ${selection}:`
     })
     .then(answers => {
         if (parseInt(answers.quantity)) {
@@ -60,7 +61,7 @@ function qtySelection(selection) {
                     const newStockQty = stockQty - orderQty
                     db.products.update({stock_quantity: newStockQty}, {where: {item_id: r.dataValues.item_id}})
                     .then(() => {
-                        console.log(`Your total is: ${orderQty * price }`)
+                        console.log(`Your total is: $${orderQty * price }`)
                         process.exit()
                     })
                     .catch(e => {
