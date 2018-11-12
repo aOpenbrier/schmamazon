@@ -24,6 +24,7 @@ ${product.dataValues.stock_quantity}`
                                 )
                             }
                             )
+                            process.exit()
                             break
                         case "View Low Inventory":
                             console.log(`ITEM# | NAME                     | STOCK `)
@@ -35,6 +36,7 @@ ${product.dataValues.product_name} ${Array(25 - product.dataValues.product_name.
 ${product.dataValues.stock_quantity}`)
                                 }
                             })
+                            process.exit()
                             break
                         case "Add Stock To Inventory":
                             inq.prompt([
@@ -55,11 +57,18 @@ ${product.dataValues.stock_quantity}`)
                                 if (!isNaN(answers.addInvQuantity)){
                                     const newStockQty = parseInt(answers.addInvQuantity) + parseInt(productsArr[index].dataValues.stock_quantity)
                                     db.products.update({ stock_quantity: newStockQty }, { where: { product_name: answers.addInvName } })
-                                    .then(r => console.log(`${answers.addInvName} is updated to ${newStockQty}`))
-                                    .catch(e => console.log(`Error: ${e}`))
+                                    .then(r => {
+                                        console.log(`${answers.addInvName} is updated to ${newStockQty}`)
+                                        process.exit()
+                                    })
+                                    .catch(e => {
+                                        console.log(`Error: ${e}`)
+                                        process.exit()
+                                    })
                                 }
                                 else {
-                                    console.log(`'${answers.addInvQuantity}' is not a number`)
+                                    console.log(`Error: '${answers.addInvQuantity}' is not a numberic value`)
+                                    process.exit()
                                 }
                             })
                             break
@@ -89,8 +98,14 @@ ${product.dataValues.stock_quantity}`)
                                         price: answers.price,
                                         stock_quantity: answers.stock_quantity
                                     })
-                                        .then(() => console.log(`${answers.product_name} has been added.`))
-                                        .catch(e => console.log(`Error: ${e.original.sqlMessage}`))
+                                        .then(() => {
+                                            console.log(`${answers.product_name} has been added.`)
+                                            process.exit()
+                                        })
+                                        .catch(e => {
+                                            console.log(`Error: ${e.original.sqlMessage}`)
+                                            process.exit()
+                                        })
                                 })
 
                             break
@@ -98,7 +113,6 @@ ${product.dataValues.stock_quantity}`)
                             process.exit()
                             break
                     }
-                    process.exit()
                 })
         })
         .catch(e => console.log(e))
