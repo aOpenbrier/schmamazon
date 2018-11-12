@@ -58,12 +58,26 @@ function qtySelection(selection) {
                 const price = r.dataValues.price
                 if (orderQty <= stockQty){
                     const newStockQty = stockQty - orderQty
-                    console.log(`Your total is: ${orderQty * price }`)
                     db.products.update({stock_quantity: newStockQty}, {where: {item_id: r.dataValues.item_id}})
+                    .then(() => {
+                        console.log(`Your total is: ${orderQty * price }`)
+                        process.exit()
+                    })
+                    .catch(e => {
+                        console.log(e)
+                        process.exit()
+                    })
                 }
                 else{
-                    console.log(`Not enough! You can have ${stockQty}. Your total is: $${stockQty * price}`)
                     db.products.update({stock_quantity: 0}, {where: { item_id: r.dataValues.item_id }})
+                        .then(() => {
+                            console.log(`Sorry not enough! You can have ${stockQty}. Your total is: $${stockQty * price}`)
+                            process.exit()
+                        })
+                        .catch(e => {
+                            console.log(e)
+                            process.exit()
+                        })
                 }
             })
         } else {
