@@ -1,0 +1,29 @@
+{
+    "development": {
+        "username": "YOURUSERNAME",
+        "password": "YOURPASSWORD",
+        "database": "schmamazon_db",
+        "host": "127.0.0.1",
+        "port": 3306,
+        "dialect": "mysql",
+        "logging": false
+    },
+    "test": {
+        "username": "YOURUSERNAME",
+        "password": "YOURPASSWORD",
+        "database": "schmamazon_db",
+        "host": "127.0.0.1",
+        "port": 3306,
+        "dialect": "mysql",
+        "logging": false
+    },
+    "production": {
+        "username": "YOURUSERNAME",
+        "password": "YOURPASSWORD",
+        "database": "schmamazon_db",
+        "host": "127.0.0.1",
+        "port": 3306,
+        "dialect": "mysql",
+        "logging": false
+    }
+}
