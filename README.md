@@ -12,11 +12,11 @@ node schmamazonCustomer.js
 
 Select an item for purchase<br/>
 ![screenshot](./readme/SC1.jpg)<br/>
-Enter a quantity for purchase,<br/>  
+Enter a quantity for purchase,<br/>
 If quantity is available, purchase will be completed:<br/>
 ![screenshot](./readme/SC2a.jpg)<br/>
 Else, the amount available will be sold:<br/>
-![screenshot](./readme/SC2b.jpg)  
+![screenshot](./readme/SC2b.jpg)
 
 ### Schmamazon Manager app
 At Command Line Interface navigate to project folder and run the command:
