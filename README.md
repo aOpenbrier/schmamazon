@@ -2,7 +2,7 @@
 
 ## Apps
 
-#### Schmamazon Customer app
+### Schmamazon Customer app
 ##### Purchase an item from Schmamazon
 
 At Command Line Interface navigate to project folder and run the command: 
@@ -10,38 +10,37 @@ At Command Line Interface navigate to project folder and run the command:
 node schmamazonCustomer.js
 ```
 
-Select an item for purchase
-![screenshot](./readme/SC1.jpg)
-Enter a quantity for purchase,
-If quantity is available, purchase will be completed:
-![screenshot](./readme/SC2a.jpg)
-Else, the amount available will be sold:
-![screenshot](./readme/SC2b.jpg)
+Select an item for purchase<br/>
+![screenshot](./readme/SC1.jpg)<br/>
+Enter a quantity for purchase,<br/>  
+If quantity is available, purchase will be completed:<br/>
+![screenshot](./readme/SC2a.jpg)<br/>
+Else, the amount available will be sold:<br/>
+![screenshot](./readme/SC2b.jpg)  
 
-
-#### Schmamazon Manager ap
+### Schmamazon Manager app
 At Command Line Interface navigate to project folder and run the command:
  ```shell
  node schmamazonManager.js
  ```
-Select from 4 manager functions:
+Select from 4 manager functions:<br/>
 ![screenshot](./readme/SM1.jpg)
 ##### View Products:
 ![screenshot](./readme/SM2.jpg)
 ##### View Low Inventory:
 ![screenshot](./readme/SM3.jpg)
 ##### Add To Inventory:
-![screenshot](./readme/SM4a.jpg)
-Must enter a number to update
-![screenshot](./readme/SM4b.jpg)
-Else, error message
+![screenshot](./readme/SM4a.jpg)<br/>
+Must enter a number to update<br/>
+![screenshot](./readme/SM4b.jpg)<br/>
+Else, error message<br/>
 ![screenshot](./readme/SM4c.jpg)
 ##### Add New Product:
-![screenshot](./readme/SM5a.jpg)
-Database requires decimal value for price
+![screenshot](./readme/SM5a.jpg)<br/>
+Database requires decimal value for price<br/>
 ![screenshot](./readme/SM5b.jpg)
 ##### View Products (updated):
-Databas reflects updates after each command
+Database reflects updates after each command<br/>
 ![screenshot](./readme/SM6.jpg)
 ## Installation
 
