@@ -25,7 +25,7 @@ function itemSelection() {
                 inq.prompt({
                     type: 'list',
                     name: 'selection',
-                    message: 'Item to purchase'
+                    message: 'Item to purchase',
                     choices: function (){
                         const choiceArr = productArr.map(each => each.dataValues.product_name)
                         choiceArr.push('-CANCEL ORDER-')
